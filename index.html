@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#24142f">
+<title>Love Oracle | Ramalan Cinta & Jodoh</title>
+<style>
+:root{--ink:#2c1935;--pink:#d85b9e;--rose:#f7dce9;--muted:#76677d;--card:#fff;--bg:#fff8fc}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 10% 5%,#ffe2f0 0,transparent 30%),radial-gradient(circle at 90% 20%,#e9ddff 0,transparent 28%),var(--bg);min-height:100vh}
+header{background:linear-gradient(135deg,#21132d,#56305e 65%,#9b4d83);color:white;padding:42px 20px 55px;text-align:center;position:relative;overflow:hidden}
+header:before,header:after{content:"✦";position:absolute;color:#f9d5e9;font-size:42px;opacity:.55}header:before{left:12%;top:25px}header:after{right:14%;bottom:18px}
+.logo{font-size:12px;letter-spacing:3px;color:#f5cde2;font-weight:800}.hero-heart{font-size:48px;margin:12px 0 2px;text-shadow:0 5px 25px #ff9dcc}
+h1{font-size:clamp(28px,5vw,44px);margin:0 0 8px;letter-spacing:-1px}.sub{color:#f1ddeb;max-width:560px;margin:auto;line-height:1.6;font-size:14px}
+main{max-width:900px;margin:-25px auto 45px;padding:0 16px;position:relative}
+.panel{background:white;border:1px solid #f1dce8;border-radius:22px;box-shadow:0 18px 55px #58305215;padding:22px;margin-bottom:18px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.tab{border:1px solid #ead7e5;background:#fff8fc;border-radius:14px;padding:15px 10px;color:var(--ink);font-weight:750;cursor:pointer;text-align:left;transition:.2s}
+.tab span{display:block;font-size:25px;margin-bottom:5px}.tab small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.tab.active{background:#f9e4ef;border:2px solid #d77bac;padding:14px 9px}
+h2{font-size:21px;margin:0 0 6px}.hint{color:var(--muted);font-size:13px;margin:0 0 18px;line-height:1.5}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:13px;font-weight:700}
+input{width:100%;padding:13px 14px;border:1px solid #e7d7e4;border-radius:12px;background:#fffdfd;font:inherit;color:var(--ink);outline:none}input:focus{border-color:var(--pink);box-shadow:0 0 0 3px #d85b9e18}
+.person-title{grid-column:1/-1;display:flex;align-items:center;gap:9px;font-weight:800;padding-top:4px}.person-title i{font-style:normal;background:#f8e5ef;border-radius:10px;padding:7px}
+button.primary{border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(100deg,#bd4c8d,#8c4c9c);color:white;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 8px 18px #a4498028}
+button.primary:disabled{opacity:.45;cursor:not-allowed}.fullbtn{width:100%;margin-top:18px}.result{display:none;animation:rise .35s ease}.result.show{display:block}@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.resulthead{text-align:center;padding:10px 5px 18px}.resulthead .bigheart{font-size:38px}.score{font-size:54px;font-weight:900;color:#c34f8d;line-height:1.1}.scorelabel{font-size:12px;color:var(--muted);letter-spacing:1px}.meter{height:10px;border-radius:20px;background:#f2e7ef;overflow:hidden;margin:12px 0 5px}.meter>div{height:100%;width:0;background:linear-gradient(90deg,#e68bb8,#9952a1);border-radius:20px;transition:width .6s}
+.resultbox{background:#fff7fb;border:1px solid #f2dfeb;border-radius:15px;padding:15px;margin:12px 0}.resultbox h3{font-size:14px;margin:0 0 9px}.resultbox p{font-size:14px;line-height:1.6;margin:0;color:#57465d}.traits{display:grid;gap:8px}.trait{display:flex;gap:9px;align-items:flex-start;font-size:14px}.trait b{color:#c34f8d}
+.nameguess{font-size:28px;font-weight:900;color:#a84883;text-align:center;margin:8px 0}.pill{display:inline-block;background:#f6e4ef;color:#914274;border-radius:30px;padding:6px 12px;font-size:12px;font-weight:700}
+.note{font-size:11px;color:#897b8e;line-height:1.55;text-align:center;margin:16px 4px 0}.actions{display:flex;gap:10px;margin-top:14px}.actions button{flex:1;border:1px solid #e9d9e6;border-radius:11px;background:white;padding:11px;color:#684a69;font-weight:700;cursor:pointer}
+footer{text-align:center;color:#897b8e;font-size:12px;padding:5px 15px 30px}
+@media(max-width:600px){header{padding:34px 18px 48px}.panel{padding:17px}.formgrid{grid-template-columns:1fr}.field.full,.person-title{grid-column:auto}.tabs{gap:7px}.tab{font-size:13px;padding:12px 8px}.tab.active{padding:11px 7px}.actions{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">✦ LOVE ORACLE ✦</div>
+  <div class="hero-heart">♡</div>
+  <h1>Discover Your Love Destiny</h1>
+  <p class="sub">Jelajahi kecocokan cinta dan temukan gambaran jodoh impianmu melalui pengalaman ramalan yang menyenangkan.</p>
+</header>
+<main>
+  <section class="panel">
+    <div class="tabs">
+      <button class="tab active" id="tabCompat" onclick="switchMode('compat')"><span>💞</span>Cek Kecocokan<small>Bandingkan dua orang</small></button>
+      <button class="tab" id="tabSoul" onclick="switchMode('soul')"><span>✨</span>Ramalan Jodoh<small>Gambaran calon pasangan</small></button>
+    </div>
+    <div id="compatForm">
+      <h2>Love Compatibility</h2><p class="hint">Isi nama dan tanggal lahir kedua orang untuk melihat hasil kecocokan versi Love Oracle.</p>
+      <div class="formgrid">
+        <div class="person-title"><i>👤</i> Orang pertama</div>
+        <div class="field"><label for="name1">Nama lengkap</label><input id="name1" placeholder="Contoh: Anisa Putri" autocomplete="name"></div>
+        <div class="field"><label for="date1">Tanggal lahir</label><input id="date1" type="date"></div>
+        <div class="person-title"><i>💗</i> Orang kedua</div>
+        <div class="field"><label for="name2">Nama lengkap</label><input id="name2" placeholder="Contoh: Ardi Pratama"></div>
+        <div class="field"><label for="date2">Tanggal lahir</label><input id="date2" type="date"></div>
+      </div>
+      <button class="primary fullbtn" id="compatBtn" onclick="predictCompat()" disabled>♡ Ramalkan Kecocokan</button>
+    </div>
+    <div id="soulForm" hidden>
+      <h2>Soulmate Prediction</h2><p class="hint">Masukkan data dirimu untuk mendapatkan gambaran karakter, kemungkinan tempat bertemu, dan tebakan nama jodoh.</p>
+      <div class="formgrid">
+        <div class="field full"><label for="singleName">Nama lengkap kamu</label><input id="singleName" placeholder="Masukkan nama kamu"></div>
+        <div class="field full"><label for="singleDate">Tanggal lahir</label><input id="singleDate" type="date"></div>
+      </div>
+      <button class="primary fullbtn" id="soulBtn" onclick="predictSoul()" disabled>✧ Temukan Jodohku</button>
+    </div>
+  </section>
+  <section class="panel result" id="result" aria-live="polite"></section>
+  <footer>Made with Love ♡ · Love Oracle<br>Ramalan ini dibuat untuk hiburan dan refleksi, bukan prediksi ilmiah atau kepastian masa depan.</footer>
+</main>
+<script>
+const traits=["Penyayang dan memiliki perhatian yang tinggi","Dewasa dalam menghadapi masalah","Humoris dan mudah mencairkan suasana","Setia serta menghargai komitmen","Ambisius tetapi tetap memiliki sisi romantis","Tenang, sabar, dan pendengar yang baik","Mandiri dan mempunyai tujuan hidup jelas","Ramah, hangat, dan mudah bergaul"];
+const places=["lingkungan pendidikan atau kampus","tempat kerja atau lingkungan profesional","acara pertemanan atau pertemuan komunitas","perjalanan atau tempat yang tidak terduga","media sosial atau komunikasi digital","lingkungan pertemanan lama"];
+const names=["Aditya","Rizky","Dimas","Arkan","Fajar","Reza","Naufal","Alvin","Raka","Rangga","Alya","Nadia","Aurel","Zahra","Citra","Nabila","Putri","Kayla","Salsabila","Dinda"];
+const descriptions=["Sosok yang tidak terlalu banyak bicara, tetapi menunjukkan kasih sayang melalui tindakan.","Seseorang yang ceria, mudah bergaul, dan membuatmu nyaman menjadi diri sendiri.","Pribadi yang dewasa, penuh perhatian, dan memiliki tujuan hidup yang jelas.","Seseorang yang sederhana, tetapi mempunyai pemikiran yang dalam dan romantis."];
+const $=id=>document.getElementById(id);
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function validDate(v){return v && new Date(v+'T00:00:00')<=new Date()}
+function updateButtons(){
+ $('compatBtn').disabled=!$('name1').value.trim()||!validDate($('date1').value)||!$('name2').value.trim()||!validDate($('date2').value);
+ $('soulBtn').disabled=!$('singleName').value.trim()||!validDate($('singleDate').value);
+}
+document.querySelectorAll('input').forEach(el=>el.addEventListener('input',updateButtons));
+function switchMode(mode){
+ $('compatForm').hidden=mode!=='compat';$('soulForm').hidden=mode!=='soul';$('tabCompat').classList.toggle('active',mode==='compat');$('tabSoul').classList.toggle('active',mode==='soul');$('result').classList.remove('show');
+}
+function traitsHTML(h){return [traits[h%8],traits[(h+3)%8],traits[(h+5)%8]].map(t=>`<div class="trait"><b>♡</b><span>${t}</span></div>`).join('')}
+function show(html){$('result').innerHTML=html;$('result').classList.add('show');$('result').scrollIntoView({behavior:'smooth',block:'start'})}
+function predictCompat(){
+ const a=$('name1').value.trim(),b=$('name2').value.trim(),d1=$('date1').value,d2=$('date2').value;
+ if(!a||!b||!validDate(d1)||!validDate(d2))return;
+ const h=hash((a+d1+b+d2).toLowerCase()),score=65+h%35;
+ const desc=["Kalian memiliki energi yang saling melengkapi. Perbedaan karakter justru bisa menjadi kekuatan hubungan.","Ada potensi hubungan yang hangat. Kunci utamanya adalah komunikasi dan saling memahami.","Kecocokan kalian menarik. Hubungan ini akan semakin kuat jika dibangun dengan kepercayaan.","Kalian memiliki karakter yang unik. Kesabaran dan komitmen akan menjadi kunci perjalanan bersama."][h%4];
+ const advice=["Jangan hanya mengandalkan perasaan. Bangun komunikasi yang terbuka.","Berikan ruang untuk berkembang tanpa kehilangan kedekatan.","Belajar memahami perbedaan dan menghargai pendapat satu sama lain."][(h>>>3)%3];
+ show(`<div class="resulthead"><div class="bigheart">💗</div><h2>Hasil Kecocokan Cinta</h2><div class="score">${score}%</div><div class="scorelabel">LOVE COMPATIBILITY SCORE</div><div class="meter"><div id="meterFill"></div></div><span class="pill">${escapeHTML(a)} + ${escapeHTML(b)}</span></div>
+ <div class="resultbox"><h3>✦ Karakter dan kepribadian</h3><div class="traits">${traitsHTML(h)}</div></div>
+ <div class="resultbox"><h3>♡ Gambaran hubungan</h3><p>${desc}</p></div><div class="resultbox"><h3>✧ Saran untuk hubungan</h3><p>${advice}</p></div>
+ <p class="note">Skor merupakan hasil permainan berbasis kombinasi data yang dimasukkan, bukan ukuran ilmiah tentang kualitas hubungan. Hubungan sehat dibangun melalui komunikasi, rasa hormat, dan komitmen.</p>${actionHTML()}`);
+ requestAnimationFrame(()=>$('meterFill').style.width=score+'%');
+}
+function predictSoul(){
+ const n=$('singleName').value.trim(),d=$('singleDate').value;if(!n||!validDate(d))return;
+ const h=hash((n+d).toLowerCase()),first=names[h%names.length],second=names[(h+7)%names.length],age=22+h%9;
+ const meeting=["Pertemuan kalian mungkin dimulai dari percakapan sederhana.","Awalnya bisa terasa biasa saja, tetapi perlahan tumbuh menjadi kedekatan.","Bisa jadi kalian sudah pernah bertemu tanpa menyadari adanya potensi hubungan."][h%3];
+ show(`<div class="resulthead"><div class="bigheart">✨</div><h2>Ramalan Calon Jodohmu</h2><div class="nameguess">${first} / ${second}</div><span class="pill">Tebakan nama jodoh · Inisial ${first[0]}</span></div>
+ <div class="resultbox"><h3>♡ Karakter dan kepribadian</h3><div class="traits">${traitsHTML(h)}</div></div>
+ <div class="resultbox"><h3>✦ Gambaran calon jodoh</h3><p>${descriptions[h%4]}</p></div>
+ <div class="resultbox"><h3>⌛ Perkiraan rentang usia</h3><p>Sekitar ${age} tahun. Ini hanya elemen permainan, bukan perkiraan berdasarkan data nyata.</p></div>
+ <div class="resultbox"><h3>📍 Kemungkinan tempat bertemu</h3><p>${places[h%places.length]}.</p></div>
+ <div class="resultbox"><h3>💌 Awal pertemuan</h3><p>${meeting}</p></div>
+ <p class="note">Nama, usia, dan gambaran di atas dihasilkan secara hiburan dari kombinasi nama dan tanggal lahir. Hasil ini tidak dapat mengidentifikasi atau memastikan siapa jodohmu.</p>${actionHTML()}`);
+}
+function actionHTML(){return `<div class="actions"><button onclick="window.print()">Cetak hasil</button><button onclick="resetResult()">Coba lagi ↻</button></div>`}
+function resetResult(){$('result').classList.remove('show');$('result').innerHTML='';}
+function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+</script>
+</body></html>
